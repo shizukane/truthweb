@@ -1,1 +1,10 @@
-<a href="{%url 'index'%}">youre signed up!.press to go home</a>
+{%extends "django_registration/layout.html"%} 
+{% block content %}
+
+<div class="container">
+	<a href="{%url 'index'%}"><figure href="" class="profile-img"></figure></a>
+</div>
+<h1 action="{%url 'index'%}">Welcome {{user.username}}!press icon to go home</h1>
+<div class="name">TRUTH<span>web</span> 
+
+{% endblock %}

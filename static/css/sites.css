@@ -1,0 +1,32 @@
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+h1 {
+	margin-top: 10px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: normal;
+	color: #efefef;
+}
+
+.profile-img {
+	background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHtnhXz1pGss9aS_takFgA3GVZR-uKnJgh1w&usqp=CAU');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	/* element positioning and style */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 150px;
+	height: 150px;
+	border-radius: 20px 50px;
+	box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+}

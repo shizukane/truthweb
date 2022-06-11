@@ -14,10 +14,10 @@
 
  body{
      overflow: hidden;
-     width: 50%;
+     width: 100%;
      display: block;
      height: 100vh;
-     background: linear-gradient(black,yellow);
+     background: linear-gradient(black,rgb(18, 18, 49));
      font-family: 'Poppins', sans-serif;
  }
 
@@ -27,12 +27,13 @@
      bottom: -10px;
      left: -50%;
      width: 200%;
+     z-index: 1;
      opacity: 1;
      font-size: 17vw;
      line-height: 1;
      font-weight: 700;
      text-align: center;
-     background: linear-gradient(rgba(100,100,100,0), rgba(100,100,100,0.2));
+     background: linear-gradient(90deg,rgb(60, 52, 26) ,rgb(22, 22, 71));
      -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
  }
@@ -61,7 +62,7 @@
  .link-to-portfolio:hover {
      opacity: 0.8;
      border-radius: 50%;
-     box-shadow: 0 0 0 20px rgba(255,255,255,.1);
+     box-shadow: 0 0 0 20px rgba(159, 30, 30, 0.511);
  }
 
 
@@ -92,7 +93,7 @@ top: 10px;
     font-style:normal !Important;
     font-weight:600;
     text-align:center;
-    border:1px solid var(--orange);
+    border:1px solid brown;
     margin-right: 70px;
     margin-top: 265px;
 
@@ -153,5 +154,10 @@ cursor: pointer;
     margin-top:auto;
     float: left;
 }
-
+a:hover{
+    color: brown;
+}
+.expl a :hover{
+    color: rgb(255, 238, 0);
+}
 
