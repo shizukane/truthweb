@@ -1,0 +1,47 @@
+<div class="pt-4 mt-4"></div>
+<section id="sites">
+    <div class="container-fluid" style="margin-top: 400px;">
+      <div class="mb-2 pb-2 pl-4 pr-2 ml-4 mr-1">
+        <h2 style="text-align: center; font-weight:lighter" class=" font-effect-fire display-6 font-weight-light"> Sites to explore </h2>
+        <hr>
+      </div>
+    
+      <div class="row pl-2 pr-2 ml-1 mr-1">
+        {% for project_item in projects %}
+          <div class="col-lg-4">
+            <div class="card-deck">
+              <div class="card mb-2 mt-2">
+                <!-- Card image -->
+                <div class="view overlay zoom">
+                  {% if project_item.project_image %}
+                  <a href="/project/{{project_item.id}}">
+                    <img class="card-img-top" src="{{project_item.project_image.url}}" alt="{{ project_item.project_name }}" height="300px">
+                  </a>
+                  {% else %}
+                  <a href="/project/{{project_item.id}}">
+                    <img  class="card-img-top" src="../../static/images/default.png" alt="{{ project_item.project_name }}">
+                    <p id="overlay"class="text"> 
+                      <button class="btn btn-default btn-circle btn-lg" ><i class="glyphicon glyphicon-plus" aria-hidden="true"></i></button>
+                    </p>
+                  </a>
+                  {% endif %}
+                </div>
+                <div class="card-body pr-2 pl-2 pr-2 mr-2">
+                  <h5 class="card-title ml-4">{{ project_item.project_title }}</h5>
+                  <div class="row ml-2">
+                    <div class="col-lg-6 dark-text"> <small> <span class="mr-1"> From {{project_item.country.name}}</span>  </small> </div>
+                    <div class="col-lg-6 dark-text d-flex justify-content-end"> <small> {{project_item.pub_date|date:"d /m/Y"}} </small> </div>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted ml-2"><img src="{{ project_item.Author.profile.photo.url }}" alt="" class="rounded-circle img-fluid mr-1" style="width: 30px;">
+                  BY <b>{{project_item.Author.first_name|upper}}</b> </small>
+                </div>
+              </div>
+            </div>
+            <!-- end of card deck  -->
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    </section>
