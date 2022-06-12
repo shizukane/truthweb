@@ -138,10 +138,9 @@ a:hover{
     color: brown;
 }
 .tt_container {
-
-    top: 470px;
+top: 470px;
 margin-bottom: 70%;
-    padding: 0.01em 16px;
+padding: 0.01em 16px;
 }
 .tt_circle {
     width: 188px;
@@ -188,18 +187,12 @@ margin-bottom: 70%;
 .tt_quote:hover {
     background: rgb(255, 230, 230);
 }
-.tt_credit {
-    border-bottom: 3px solid red;
-    border-left: 1.0em solid transparent;
-    padding-left: 1.0em;
-    float: right;
-    font-size: 0.77em;
-}
+
 .glow {
     font-size: 80px;
     color: #fff;
     text-align: center;
-    animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 3s ease-in-out infinite alternate;
   }
   
   @keyframes glow {

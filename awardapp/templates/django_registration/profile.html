@@ -27,7 +27,7 @@
     <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-White" title="close menu">
       <i class="fa fa-remove"></i>
     </a>
-    <h4 class="w3-center"><b >Truth</b></h4>
+    <h4 style="color: wheat;"class="w3-center"><b >Truth</b></h4>
     <div class="w3-center">
         {% if user.profile.photo %}
          <img src="{{ user.profile.photo.url }}" style="width:45%;" class="w3-circle w3-center">
@@ -38,18 +38,18 @@
 
     <p class="w3-text-white w3-center">{{user.username}}</p>
     {% if user.profile.bio %}
-            <p>{{ user.profile.bio}}</p>
+            <p>{{  user.profile.bio}}</p>
             {%else%}
-            <P>No user bio for {{user.username}}</P>
+            <P style="color: wheat;">No user bio for {{user.username}}</P>
             {% endif %}
     <hr>
 
   </div>
   <div class="w3-bar-block">
-    <a href="/" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-home"><i class="fa fa-home fa-fw w3-margin-right"></i>Home</a>
-    <a href="{%url 'profile'%}" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>Profile</a>
-    <a href="{%url 'new-project'%}" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>Submit Project</a>
-    <a href="/logout" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>Logout</a>
+    <a href="/" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-blue"><i class="fa fa-home fa-fw w3-margin-right"></i>Home</a>
+    <a style="color: wheat;"href="{%url 'profile'%}" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>Profile</a>
+    <a style="color: wheat;"href="{%url 'new-project'%}" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>Submit Project</a>
+    <a style="color: wheat;"href="{%url 'logout'%}" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>Logout</a>
   </div>
 
 </nav>
@@ -67,13 +67,13 @@
         <img src="https://www.yourfirstpatient.com/assets/default-user-avatar-thumbnail-117c4e02d0bee9a424842ebb2a903cf71468999f79ce30bad99c07f100764064.png" style="width:45%;" class="w3-circle w3-center">
           {% endif %}
           <br> <br>
-        <h4> <span class="font-weight-bold"> Names:</span>  {{user.first_name}} {{user.last_name|upper}} </h4>
-        <p> <span class="font-weight-bold"> Email:</span>  {{user.email}} </p>
-        <p> <span class="font-weight-bold"> Bio:</span> {{ user.profile.bio}}  </p>
+        <h4 style="color: wheat;"> <span class="font-weight-bold"> Names:</span>  {{user.first_name}} {{user.last_name|upper}} </h4>
+        <p style="color: wheat;">  <span class="font-weight-bold"> Email:</span>  {{user.email}} </p>
+        <p style="color: wheat;"> <span class="font-weight-bold"> Bio:</span> {{ user.profile.bio}}  </p>
         <button class="btn btn-md btn-outline-info font-weight-bold" data-toggle="modal" data-target="#profile"> Edit Profile</button>
       </div>
       <hr>
-      <h4 class="font-weight-bold">My sites</h4>
+      <h4 style="color: wheat;"class="font-weight-bold">My sites</h4>
       <hr>
       {% if projects %}
       {% for project_item in projects%}
@@ -81,7 +81,7 @@
       {% endfor %}
 
       {% else %}
-      <p>You have not submitted any sites</p>
+      <p style="color: wheat;">You have not submitted any sites</p>
       {% endif %}        
     </div>
     <!-- empty div -->

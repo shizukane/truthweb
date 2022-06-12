@@ -1,17 +1,25 @@
-import django
+
 from django.conf import settings
 from django.templatetags.static import static
 from django.shortcuts import render,redirect
 from django.http import HttpResponse, Http404
 import datetime as dt
+from django.template.loader import render_to_string
+from django.utils.encoding import force_bytes
+from django.db.models import Q
+from django.utils.http import urlsafe_base64_encode
+from django.contrib.auth.models import User
+from django.contrib.auth.tokens import default_token_generator
 from .models import Profile,Projects
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 from .forms import ProfileUpdateForm,RegisterForm,NewProjectForm
 from django.contrib import messages
 from rest_framework.response import Response
+from django.core.mail import BadHeaderError, send_mail
 from rest_framework.views import APIView
 from .serializer import ProfileSerializer, ProjectSerializer
+from django.contrib.auth.forms import PasswordResetForm
 
 
 # Create your views here.
@@ -103,7 +111,35 @@ def user_profiles(request):
         form = ProfileUpdateForm()
     
     return render(request, 'django_registration/profile.html', {"form":form, "projects":projects})
-
+def password_reset_request(request):
+    if request.method == "POST":
+        domain = request.headers['Host']
+        password_reset_form = PasswordResetForm(request.POST)
+        if password_reset_form.is_valid():
+            data = password_reset_form.cleaned_data['email']
+            associated_users = User.objects.filter(Q(email=data))
+            if associated_users.exists():
+                for user in associated_users:
+                    subject = "Password Reset Requested"
+                    email_template_name = "django_registration/password_reset_email.html"
+                    c = {
+                        "email": user.email,
+                        'domain': domain,
+                        'site_name': 'Interface',
+                        "uid": urlsafe_base64_encode(force_bytes(user.pk)),
+                        "user": user,
+                        'token': default_token_generator.make_token(user),
+                        'protocol': 'http',
+                    }
+                    email = render_to_string(email_template_name, c)
+                    try:
+                        send_mail(subject, email, settings.EMAIL_HOST_USER, [user.email], fail_silently=False)
+                    except BadHeaderError:
+                        return HttpResponse('Invalid header found.')
+                    return redirect("password_reset_done.html")
+    password_reset_form = PasswordResetForm()
+    return render(request=request, template_name="django_registration/reset.html",
+                  context={"password_reset_form": password_reset_form})
 
 class ProjectList(APIView):
     def get(self, request, format=None):

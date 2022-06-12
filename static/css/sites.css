@@ -78,22 +78,6 @@ h1 {
 .social-icon__link:hover {
   transform: translateY(-10px);
 }
-
-.menu__link {
-  font-size: 1.2rem;
-  color: #fff;
-  margin: 0 10px;
-  display: inline-block;
-  transition: 0.5s;
-  text-decoration: none;
-  opacity: 0.75;
-  font-weight: 300;
-}
-
-.menu__link:hover {
-  opacity: 1;
-}
-
 .footer p {
   color: #fff;
   margin: 15px 0 10px 0;
@@ -102,7 +86,6 @@ h1 {
 }
 
 .wave {
-  background: rgb(12, 12, 37);
   position: absolute;
   top: -100px;
   left: 0;

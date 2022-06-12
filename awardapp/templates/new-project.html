@@ -31,7 +31,7 @@
     <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
       <i class="fa fa-remove"></i>
     </a>
-     <h4 class="w3-center"><b >Truth</b></h4>
+     <h4 style="color: wheat;"class="w3-center"><b >Truth</b></h4>
     <div class="w3-center">
         {% if user.profile.photo %}
          <img src="{{ user.profile.photo.url }}" style="width:45%;" class="w3-circle w3-center">
@@ -44,7 +44,7 @@
     {% if user.profile.bio %}
             <p>{{ user.profile.bio}}</p>
             {%else%}
-            <P>No user bio for {{user.username}}</P>
+            <P style="color: wheat;">No user bio for {{user.username}}</P>
             {% endif %}
     <hr>
 
@@ -52,15 +52,15 @@
   </div>
   <div class="w3-bar-block">
     <a href="/" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-blue"><i class="fa fa-home fa-fw w3-margin-right"></i>Home</a>
-    <a href="{%url 'profile'%}" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>Profile</a>
-    <a href="{%url 'new-project'%}" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>Submit Project</a>
-    <a href="{%url 'logout'%}" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>Logout</a>
+    <a style="color: wheat;"href="{%url 'profile'%}" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>Profile</a>
+    <a style="color: wheat;"href="{%url 'new-project'%}" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>Submit Project</a>
+    <a style="color: wheat;"href="{%url 'logout'%}" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>Logout</a>
   </div>
 
 </nav>
 
 <body>
-    <h2 class="display-5 text-center font-weight-bold">SUBMIT YOUR SITE </h2>
+    <h2 style="color: wheat;"class="display-5 text-center font-weight-bold">SUBMIT YOUR SITE </h2>
   <div class="row">
     <!-- Empty div -->
     <div class="col-lg-3"></div>
@@ -69,8 +69,6 @@
         {%csrf_token%}
 
         {% bootstrap_form form%}
-        <p>sss</p>
-
         <input type="submit" class="btn btn-warning btn-lg font-weight-bold" value="SUBMIT">
       </form>
     </div>
@@ -84,7 +82,7 @@
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>
   {% endblock %}
-<div class="name">TRUTH<span>web</span> 
+  
 </div>
 </html>
 </body>

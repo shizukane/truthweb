@@ -6,7 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+{% block content %}
+{% load crispy_forms_tags %}
 <body>
-    
+<form  action="" method="post">
+
+{% csrf_token %} 
+{{ password_reset_form|crispy }}
+<button type="submit">submit</button>
+
+    </form>
+{% endblock %}
+
 </body>
 </html>

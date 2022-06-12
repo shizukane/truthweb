@@ -26,11 +26,11 @@
     <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
       <i class="fa fa-remove"></i>
     </a>
-    <h4 class="w3-center"><b >Truth</b></h4>
+    <h4 style="color: wheat;"class="w3-center"><b >Truth</b></h4>
   </div>
   <div class="w3-bar-block">
     <a href="/" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-blue"><i class="fa fa-home fa-fw w3-margin-right"></i>Home</a>
-    <a href="/accounts/register" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-sign-in fa-fw w3-margin-right"></i>Register</a> 
+    <a style="color: wheat;" href="/accounts/register" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-sign-in fa-fw w3-margin-right"></i>Register</a> 
   </div>
 
 </nav>
@@ -40,11 +40,11 @@
     <div class="col-lg-3"></div>
     <div class="col-lg-6 mt-4 pt-2 " style="height: 60vh;">
       {% if form.errors %}
-        <p style="color: white;"> Password or Username is incorrect </p>
+        <p style="color: wheat;"> Password or Username is incorrect </p>
       {% endif %}
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 style="color: white;" class="text-center font-weight-bold">Sign In</h3>
+          <h3 style="color: wheat;" class="text-center font-weight-bold">Sign In</h3>
         </div>
         <div class="panel-body">
           <form  action="/accounts/login/" method="post">
@@ -57,7 +57,7 @@
           </form>
         </div>
       </div>
-      <small style="color: white;">Not registered? <a href="/accounts/register">Sign Up Here!</a></small>
+      <small style="color: wheat;">Not registered? <a href="/accounts/register">Sign Up Here!</a></small>
     </div>
     </div>
     <!-- empty div -->
