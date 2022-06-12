@@ -26,6 +26,6 @@ urlpatterns = [
     url(r'^accounts/register/$',RegistrationView.as_view(form_class=RegisterForm,template_name="django_registration/registration_form.html" ),{"next_page": '/'}),
     url(r'^accounts/', include('django_registration.backends.one_step.urls')),
     url(r'^accounts/login/$', views.LoginView.as_view(template_name="django_registration/login.html"), {"next_page": '/'}), 
-    url(r'^accounts/logout/$', views.LogoutView.as_view(),{"next_page": '/'} ), 
+    url(r'^accounts/logout/$', views.LogoutView.as_view(template_name="django_registration/logout.html"),{"next_page": '/'}, name='logout'), 
     url(r'^tinymce/', include('tinymce.urls')),
 ]

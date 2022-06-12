@@ -32,7 +32,7 @@
                   <img class="card-img-top" src="{{project_item.project_image.url}}" alt="{{ project_item.project_name }}" height="300px">
                 </a>
                 {% else %}
-                <a href="/project/{{project_item.id}}">
+                <a style="z-index: 10;" href="/project/{{project_item.id}}">
                   <img  class="card-img-top" src="../../static/images/default.png" alt="{{ project_item.project_name }}">
                   <p id="overlay"class="text"> 
                     <button class="btn btn-default btn-circle btn-lg" ><i class="glyphicon glyphicon-plus" aria-hidden="true"></i></button>

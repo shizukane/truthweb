@@ -51,7 +51,7 @@
     <a href="/" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-blue"><i class="fa fa-home fa-fw w3-margin-right"></i>Home</a>
     <a href="{%url 'profile'%}" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>Profile</a>
     <a href="{%url 'new-project'%}" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>Submit Project</a>
-    <a href="/logout" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>Logout</a>
+    <a href="{%url 'logout'%}" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>Logout</a>
   </div>
 
 </nav>
@@ -70,7 +70,7 @@
         <div class="view view-cascade overlay">
           {% if project.project_image %}
           <img class="card-img-top" src="{{project.project_image.url}}" alt="{{ project.project_name }}"
-           style="max-height: 400px;">
+           style="max-height: 200px;">
           {% else %}
           <img class="card-img-top" src="../../static/images/default.png"
             alt="{{ project.project_name }}">
@@ -128,6 +128,5 @@
   </div>
 
 </div>
-<div class="name">TRUTH<span>web</span> 
 </div>
 {% endblock %}
