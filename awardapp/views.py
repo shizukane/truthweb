@@ -1,3 +1,4 @@
+import django
 from django.conf import settings
 from django.templatetags.static import static
 from django.shortcuts import render,redirect
@@ -79,7 +80,9 @@ def new_project(request):
     else:
         form = NewProjectForm()
     return render(request, 'new-project.html', {"form": form})
+def reset(request):
 
+    return render(request,'django_registration/reset.html' )
 
 @login_required(login_url='/accounts/login/')
 def user_profiles(request):
