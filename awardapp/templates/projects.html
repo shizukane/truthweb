@@ -30,6 +30,8 @@
     </a>
      <h4 class="w3-center"><b >Truth</b></h4>
     <div class="w3-center">
+      {% if user.is_authenticated %}
+
         {% if user.profile.photo %}
          <img src="{{ user.profile.photo.url }}" style="width:45%;" class="w3-circle w3-center">
         {%else%}
@@ -44,6 +46,7 @@
             <P>No user bio for {{user.username}}</P>
             {% endif %}
     <hr>
+    {% endif %}
 
 
   </div>
