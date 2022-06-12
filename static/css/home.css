@@ -21,24 +21,7 @@
  }
 
 
- .name{
-     position: absolute;
-     bottom: -10px;
-     left: -50%;
-     width: 200%;
-     opacity: 1;
-     font-size: 17vw;
-     line-height: 1;
-     font-weight: 700;
-     text-align: center;
-     background: linear-gradient(90deg,rgb(60, 52, 26) ,rgb(22, 22, 71));
-     background-clip: text;
-     -webkit-text-fill-color: transparent;
- }
- .name span{
-     font-family: 'Dancing Script', cursive;
-     font-weight: 400;
- }
+
 
  .link-to-portfolio {
     position: fixed;
@@ -146,6 +129,7 @@ text-align: center;
 font-variation-settings:"wdth" 70, "wght" 20;
 cursor: pointer;
 }
+
 .head{
     margin-top:auto;
     float: left;
