@@ -38,7 +38,8 @@ class Projects(models.Model):
     link = models.URLField()
     country = CountryField(blank_label='(select country)', default='RW')
     projectcategory = models.CharField(max_length=80)
-
+    
+    
 
 
     @classmethod
