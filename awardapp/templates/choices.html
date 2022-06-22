@@ -1,0 +1,299 @@
+
+<style>
+    @font-face {
+        src: url('https://res.cloudinary.com/dr6lvwubh/raw/upload/v1529908256/CompressaPRO-GX.woff2');
+        font-family:'Compressa VF';
+        font-style: normal;
+        font-weight: lighter;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+            margin:0;
+            padding:0;
+            border:none;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzksQPbySqAzmm8HTDQvuF66ZMq4vInpz6Q2ncP1PgiSU15S2YQEr63mF8AGhR6D5rx5w&usqp=CAU');
+          }
+
+          html{
+              font-size:60.5%;
+          }
+        
+          .all{
+            width:100%;
+            min-height:100vh;
+            background-color: #060707;
+
+            justify-content: center;
+            align-items: center;
+            
+
+          }   
+
+          .all>h3{
+              position:fixed;
+              bottom:3%;
+              left:50%;
+              transform: translateX(-50%);
+
+              color:#fefefe;
+              font-size:2rem;
+              font-weight:50;
+              letter-spacing: 0.2rem;
+          }
+
+          .container{
+            justify-content: center;
+            align-items: center;
+            
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+           
+            
+          }
+
+
+          button{
+            width:200px;
+            margin: 10px;
+            height:55px;
+            font-size:1.9rem;
+            font-weight: lighter;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            font-family: "Lucida Console", "Courier New", monospace;
+            color:#fefefe;
+            cursor:pointer;
+            position:relative;
+            z-index:3;
+
+          }
+
+          button::before{
+              content:'';
+              position:absolute;
+              width:200px;
+              height:55px;
+             
+              top:0;
+              left:0;
+              
+              transition: .5s linear;
+              
+              
+              z-index: -2;
+              
+          }
+
+          
+          button::after{
+              content:'';
+              position:absolute;
+              background-color: #020303;
+              
+              width:200px;
+              height:55px;
+
+              top:0;
+              left:0;
+              z-index: -1;
+
+             
+              
+          }
+
+          /* hover effect */
+
+          button:hover::before
+          {
+            filter:blur(11px);
+            
+          }
+
+          button:hover::after
+          {
+            border: 1px solid #020303;
+          }
+
+          .btn-2:hover::before
+         
+          {
+            background:linear-gradient(45deg, #d17511, #061976, #b23305);
+            transform: rotate(4deg);
+          }
+
+          .btn-3:hover::before
+          {
+            background:linear-gradient(45deg, #ff075b, #0e1538,#1aff22);
+            transform: rotate(-4deg);
+          }
+      
+          .btn-4:hover::before
+         
+          {
+            background:linear-gradient(45deg, #00ccff, #0e1538, #d400d4);
+            transform: rotate(4deg);
+          }
+          .btn-5:hover::before
+         
+          {
+            background:linear-gradient(45deg, #00ccff, #0e1538, #d400d4);
+            transform: rotate(4deg);
+          }
+          .btn-6:hover::before
+         
+          {
+            background:linear-gradient(45deg, #00ccff, #0e1538, #d400d4);
+            transform: rotate(4deg);
+          }
+          .btn-7:hover::before
+         
+          {
+            background:linear-gradient(45deg, #00ccff, #0e1538, #d400d4);
+            transform: rotate(4deg);
+          }
+          .btn-8:hover::before
+         
+          {
+            background:linear-gradient(45deg, #00ccff, #0e1538, #d400d4);
+            
+            transform: rotate(4deg);
+          }
+
+          /* media Q*/
+          
+          @media only screen and (max-width: 992px){
+            
+            .container{
+              flex-direction: column;
+            }
+          }
+
+          .colors {
+           
+            animation: colors 2s ease-in-out infinite alternate;
+          }
+          
+        @keyframes colors {
+            from {
+            box-shadow:  0 0 40px #7b910d, 0 0 2px #e600e2, 0 0 10px #250a4b, 0 0 10px #00e60f, 0 0 10px #08713b, 0 0 20px #d400d4;
+            }
+        }
+        .colors1 {
+           
+            animation: colors1 4s ease-in-out infinite alternate;
+              }
+              
+        @keyframes colors1 {
+            from {
+                box-shadow:  0 0 40px #91440d, 0 0 2px #e600e2, 0 0 10px #250a4b, 0 0 10px #00e60f, 0 0 10px #08713b, 0 0 20px #d400d4;
+            }  
+            }
+              
+        .colors2 {
+           
+            animation: colors2 2s ease-in-out infinite alternate;
+                  }
+                  
+        @keyframes colors2 {
+            from {
+                box-shadow:  0 0 40px #7b910d, 0 0 2px #e600e2, 0 0 10px #250a4b, 0 0 10px #00e60f, 0 0 10px #08713b, 0 0 20px #d400d4;
+            } 
+                }   
+        .colors3 {
+           
+                    animation: colors3 3s ease-in-out infinite alternate;
+                      }
+                      
+                    @keyframes colors3 {
+                        from {
+                            box-shadow:  0 0 40px #d4c600, 0 0 10px #e600e2, 0 0 10px #250a4b, 0 0 10px #00e60f, 0 0 10px #08713b, 0 0 20px #d400d4;
+                        }  
+                    }
+
+            .colors4 {
+           
+                    animation: colors4 4s ease-in-out infinite alternate;
+                          }
+                          
+                    @keyframes colors4 {
+                            from {
+                                box-shadow:  0 0 40px #91440d, 0 0 2px #e600e2, 0 0 10px #250a4b, 0 0 10px #00e60f, 0 0 10px #08713b, 0 0 20px #d400d4;
+                            }  
+
+                        }
+            .colors5 {
+           
+                            animation: colors5 3s ease-in-out infinite alternate;
+                          }
+                          
+                          @keyframes colors5 {
+                            from {
+                                box-shadow:  0 0 40px #d4c600, 0 0 10px #e600e2, 0 0 10px #250a4b, 0 0 10px #00e60f, 0 0 10px #08713b, 0 0 20px #d400d4;
+                            }  
+                        }  
+            .colors6 {
+           
+                                animation: colors6 3s ease-in-out infinite alternate;
+                              }
+                              
+                              @keyframes colors6 {
+                                from {
+                                    box-shadow:  0 0 40px #3c00d4, 0 0 10px #e600e2, 0 0 10px #250a4b, 0 0 10px #00e60f, 0 0 10px #08713b, 0 0 20px #d400d4;
+                                }     
+                            }  
+            .colors7 {
+           
+                                    animation: colors7 2s ease-in-out infinite alternate;
+                                  }
+                                  
+                                  @keyframes colors7 {
+                                    from {
+                                        box-shadow:  0 0 40px #7b910d, 0 0 2px #e600e2, 0 0 10px #250a4b, 0 0 10px #00e60f, 0 0 10px #08713b, 0 0 20px #d400d4;
+                                    }       
+        }
+  .profile-img {
+          background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStJrGnWNwWX_5ayhQSN4aeCo_L_xaEPoXVKQ&usqp=CAU');
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          /* element positioning and style */
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 150px;
+          height: 150px;
+          border-radius: 20px 50px;
+          box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+        }
+</style>
+
+<h1 style="color: wheat; text-align: center; font-family:'Compressa VF';
+text-rendering: optimizeSpeed;
+font-size: 60px;
+margin-left: 500px;
+font-weight: lighter;
+
+font-weight:lighter;
+margin: 0 auto;
+text-align: center;
+cursor: pointer;">Choose your Prefered Category</h1>
+<div class="container">
+	<a href="{%url 'index'%}"><figure style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStJrGnWNwWX_5ayhQSN4aeCo_L_xaEPoXVKQ&usqp=CAU');
+        " class="profile-img"></figure></a>
+</div>
+    <div class="container">
+        <a href="{%url 'ecommerce'%}"><button class="btn-3 colors" style="margin-left:20%; top:0;" >E-commerce</button></a>
+        <a href="{%url 'homepage'%}"><button class="btn-2 colors1" style="margin-left:10%;">Personal sites</button></a>
+        <a href="{%url 'portfolio'%}"><button class="btn-4 colors2"style="margin-left:8%; margin-top:10%;">Portfolios</button></a>
+        <a href="{%url 'magazine'%}"><button class="btn-5 colors3 "style="margin-left:45%; margin-top:5%;">News or Magazine sites</button></a>
+        <a href="{%url 'blog'%}"><button class="btn-6 colors4 "style="margin-left:45%; margin-top:3%">Blogs</button></a>
+        <a href="{%url 'landingpage'%}"><button class="btn-7 colors5 "style="margin-left:45%; margin-top:3%;">Business sites</button></a>
+        <a href="{%url 'socialmedia'%}"><button class="btn-1 colors7" style="margin-left:45%; margin-top:3%;">Entertainment sites</button></a>
+
+
+
+
+    </div>

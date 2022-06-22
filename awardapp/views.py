@@ -1,9 +1,12 @@
 
+from unicodedata import category
 from django.conf import settings
 from django.templatetags.static import static
 from django.shortcuts import render,redirect
 from django.http import HttpResponse, Http404
 import datetime as dt
+from django.shortcuts import get_object_or_404
+
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes
 from django.db.models import Q
@@ -27,13 +30,44 @@ from django.contrib.auth.forms import PasswordResetForm
 def index(request):
 
     return render(request, 'index.html')
+def portfolio(request):
+    date = dt.date.today()
+    projects = Projects.get_projects()
+    return render(request, 'portfolio.html',{"date": date, "projects":projects})
+def homepage(request):
+    date = dt.date.today()
+    projects = Projects.get_projects()
+    return render(request, 'homepage.html',{"date": date, "projects":projects})
+def blog(request):
+    date = dt.date.today()
+    projects = Projects.get_projects()
+    return render(request, 'blog.html',{"date": date, "projects":projects})
+def magazine(request):
+    date = dt.date.today()
+    projects = Projects.get_projects()
+    return render(request, 'magazine.html',{"date": date, "projects":projects})
+def choices(request):
 
+    return render(request, 'choices.html')
 def sites(request):
     date = dt.date.today()
     projects = Projects.get_projects()
     return render(request, 'sites.html',{"date": date, "projects":projects})
+def landingpage(request):
+    date = dt.date.today()
+    projects = Projects.get_projects()
+    return render(request, 'landingpage.html',{"date": date, "projects":projects})
+def ecommerce(request):
+    date = dt.date.today()
+    projects = Projects.get_projects()
+    return render(request, 'ecommerce.html',{"date": date, "projects":projects})
+def socialmedia(request):
+    date = dt.date.today()
+    projects = Projects.get_projects()
+    return render(request, 'socialmedia.html',{"date": date, "projects":projects})
+def help(request):
 
-
+    return render(request, 'help.html')
 def register(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)

@@ -1,8 +1,8 @@
+from unicodedata import category
 from django.db import models
 from django.contrib.auth.models import User
 from django_countries.fields import CountryField
 from star_ratings.models import Rating
-
         
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -28,20 +28,19 @@ class Profile(models.Model):
     class Meta:
         verbose_name = 'Profile'
         verbose_name_plural = 'Profiles'
-    
+
 class Projects(models.Model):
     project_title = models.CharField(max_length=255)
-    
     project_image = models.ImageField(upload_to = 'images/', default='images/default.png')
     project_description = models.TextField()
     pub_date = models.DateTimeField(auto_now_add=True)
     Author = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)
     link = models.URLField()
     country = CountryField(blank_label='(select country)', default='RW')
+    projectcategory = models.CharField(max_length=80)
 
-    def save_project(self):
-        self.save()
-        
+
+
     @classmethod
     def get_projects(cls):
         projects = cls.objects.all()

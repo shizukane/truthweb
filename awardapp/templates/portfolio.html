@@ -12,17 +12,17 @@
 <body>
   
   {% block content %}
-
+ 
 <section id="sites">
   <div class="container-fluid" style="margin-top: 100px;">
     <div class="mb-2 pb-2 pl-4 pr-2 ml-4 mr-1">
-      <h2 style="text-align: center; font-weight:lighter" class=" font-effect-fire display-6 font-weight-light"> Sites to explore </h2>
+      <h2 style="text-align: center; font-weight:lighter" class=" font-effect-fire display-6 font-weight-light">Portfolio sites</h2>
       <hr>
     </div>
   
     <div class="row pl-2 pr-2 ml-1 mr-1">
-      
       {% for project_item in projects %}
+       {% if project_item.projectcategory == 'blog'%}
         <div class="col-lg-4">
           <div class="card-deck">
             <div class="card mb-2 mt-2">
@@ -54,9 +54,11 @@
               </div>
             </div>
           </div>
+         
           <!-- end of card deck  -->
         </div>
-      {% endfor %}
+        {% endif %}
+    {% endfor %}
     </div>
   </div>
   </section>

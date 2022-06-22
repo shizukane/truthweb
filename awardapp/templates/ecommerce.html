@@ -1,5 +1,15 @@
 {%extends 'layout.html'%}
+{% load static %}
 
+{% block styles %} 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/basenews.css' %}">
+  <!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
+{% endblock %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,17 +22,17 @@
 <body>
   
   {% block content %}
-
+ 
 <section id="sites">
   <div class="container-fluid" style="margin-top: 100px;">
     <div class="mb-2 pb-2 pl-4 pr-2 ml-4 mr-1">
-      <h2 style="text-align: center; font-weight:lighter" class=" font-effect-fire display-6 font-weight-light"> Sites to explore </h2>
+      <h2 style="text-align: center; font-weight:lighter" class=" font-effect-fire display-6 font-weight-light"> E-commerce sites</h2>
       <hr>
     </div>
   
     <div class="row pl-2 pr-2 ml-1 mr-1">
-      
       {% for project_item in projects %}
+       {% if project_item.projectcategory == 'ecommerce'%}
         <div class="col-lg-4">
           <div class="card-deck">
             <div class="card mb-2 mt-2">
@@ -56,7 +66,8 @@
           </div>
           <!-- end of card deck  -->
         </div>
-      {% endfor %}
+        {% endif %}
+    {% endfor %}
     </div>
   </div>
   </section>
