@@ -1,25 +1,25 @@
 {%extends "django_registration/layout.html"%}
 {% load bootstrap4 %}
 {% load static %}
-{% block content %}
 <body style="color: white;">
   
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
-<script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+
   {% block styles %} 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/basenews.css' %}"> 
   <link rel="stylesheet" href="{% static 'css/home.css' %}">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+  <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
     <!-- Material Design Bootstrap -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
   {% endblock %}
 </head>
+{% block content %}
 
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-collapse w3-black w3-animate-left " style="z-index:3;width:250px; " id="mySidebar"><br>
@@ -37,8 +37,8 @@
     </div>
 
     <p class="w3-text-white w3-center">{{user.username}}</p>
-    {% if user.profile.bio %}
-            <p>{{  user.profile.bio}}</p>
+    {% if user.bio %}
+            <p>{{  user.bio}}</p>
             {%else%}
             <P style="color: wheat;">No user bio for {{user.username}}</P>
             {% endif %}
@@ -62,14 +62,14 @@
     <div class="col-lg-8 mt-4 pt-2 ">
       <div class="pb-2">
         {% if user.profile.photo %}
-        <img src="{{ user.profile.photo.url }}" alt="" class="d-flex justify-content-start rounded-circle mb-1 img-fluid mr-1" style="width: 150px;">
+        <img src="{{ user.photo.url }}" alt="" class="d-flex justify-content-start rounded-circle mb-1 img-fluid mr-1" style="width: 150px;">
         {% else %}
         <img src="https://www.yourfirstpatient.com/assets/default-user-avatar-thumbnail-117c4e02d0bee9a424842ebb2a903cf71468999f79ce30bad99c07f100764064.png" style="width:45%;" class="w3-circle w3-center">
           {% endif %}
           <br> <br>
         <h4 style="color: wheat;"> <span class="font-weight-bold"> Names:</span>  {{user.first_name}} {{user.last_name|upper}} </h4>
         <p style="color: wheat;">  <span class="font-weight-bold"> Email:</span>  {{user.email}} </p>
-        <p style="color: wheat;"> <span class="font-weight-bold"> Bio:</span> {{ user.profile.bio}}  </p>
+        <p style="color: wheat;"> <span class="font-weight-bold"> Bio:</span> {{ user.bio}}  </p>
         <button class="btn btn-md btn-outline-info font-weight-bold" data-toggle="modal" data-target="#profile"> Edit Profile</button>
       </div>
       <hr>

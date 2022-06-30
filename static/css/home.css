@@ -3,7 +3,11 @@
 		    BEST VIEWED FULLSCREEN
    https://codepen.io/ig_design/full/NeRxzj
  * ======================================== */
-
+ @font-face {
+	src: url('https://res.cloudinary.com/dr6lvwubh/raw/upload/v1529908256/CompressaPRO-GX.woff2');
+	font-family:'Compressa VF';
+	font-style: normal;
+}
  @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
  @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
 
@@ -291,7 +295,7 @@ h1 {
 
 .footer {
   position: relative;
-  width: 100%;
+  width: 10%;
   margin-top: 15%;
   background: #3586ff;
   min-height: 80px;
