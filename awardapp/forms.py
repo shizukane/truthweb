@@ -1,5 +1,8 @@
+from dataclasses import field
+from pyexpat import model
+from tkinter import Widget
 from django import forms
-from .models import Profile,Projects
+from .models import Profile,Projects,Comment
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django_registration.forms import RegistrationForm
@@ -38,5 +41,14 @@ class RegisterForm(RegistrationForm):
         for fieldname in ['username', 'password1', 'password2']:
             self.fields[fieldname].help_text = None
         self.helper.form_show_labels = True 
-        
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('name','body')
+    widgets = {
+        'Name': forms.TextInput(attrs={'class':'form-control'}),
+        'Body': forms.Textarea(attrs={'class':'form-control'})
+
+    }    
+
 

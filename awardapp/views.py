@@ -1,5 +1,8 @@
 
+from dataclasses import fields
+from re import template
 from unicodedata import category
+from xml.etree.ElementTree import Comment
 from django.conf import settings
 from django.templatetags.static import static
 from django.shortcuts import render,redirect
@@ -13,10 +16,10 @@ from django.db.models import Q
 from django.utils.http import urlsafe_base64_encode
 from django.contrib.auth.models import User
 from django.contrib.auth.tokens import default_token_generator
-from .models import Profile,Projects
+from .models import Profile,Projects,Comment
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
-from .forms import ProfileUpdateForm,RegisterForm,NewProjectForm
+from .forms import ProfileUpdateForm,RegisterForm,NewProjectForm,CommentForm
 from django.contrib import messages
 from rest_framework.response import Response
 from django.core.mail import BadHeaderError, send_mail
@@ -174,18 +177,16 @@ def password_reset_request(request):
     password_reset_form = PasswordResetForm()
     return render(request=request, template_name="django_registration/reset.html",
                   context={"password_reset_form": password_reset_form})
+def comment(request, id):
+    form = CommentForm
+    pk = id
+    
+    return render(request, "comments.html", {"form":form})
+class AddCommentView(APIView):
+    model = Comment
+    form_class = CommentForm
+    fields = ('name','body')
+    template_name = 'add_comment.html'
 
-class ProjectList(APIView):
-    def get(self, request, format=None):
-        all_project = Projects.objects.all()
-        serializers = ProjectSerializer(all_project, many=True)
-        return Response(serializers.data)
-    
-    
-class ProfileList(APIView):
-    def get(self, request, format=None):
-        all_profile = Profile.objects.all()
-        serializers = ProfileSerializer(all_profile, many=True)
-        return Response(serializers.data)
-    
+
     

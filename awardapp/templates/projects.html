@@ -135,5 +135,20 @@
   </div>
 
 </div>
+<div style="margin-left: 30%;">
+<h1 style="color: wheat; margin-right:22%">Comments</h1>
+{% if not   project.comments.all %}
+ <p style="color:white;">  No comments Yet</p> <a style="color:rgb(18, 96, 252);" href="">Add a comment</a>
+{% else %}
+    {% for comment in project.comments.all %}
+    <a style="color:rgb(18, 96, 252);" href="/comment/{{comment.id}}">Add a comment</a>
+<br><br>
+    <strong style="color: wheat;"> {{comment.name}}
+      {{comment.date_added}}</strong>
+   
+    <p style="color:white">{{comment.body}}</p>
+
+    {% endfor %}
+{% endif %}
 </div>
 {% endblock %}

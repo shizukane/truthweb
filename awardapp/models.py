@@ -1,3 +1,5 @@
+from tkinter import CASCADE
+from typing import cast
 from unicodedata import category
 from django.db import models
 from django.contrib.auth.models import User
@@ -76,3 +78,11 @@ class Projects(models.Model):
         ordering = ['-pub_date']
         verbose_name = 'My Project'
         verbose_name_plural = 'Projects'
+class Comment(models.Model):
+    project = models.ForeignKey(Projects,related_name='comments',on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    body = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return '%s - %s' % (self.project.project_title,self.name)
