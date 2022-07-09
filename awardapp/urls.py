@@ -1,4 +1,4 @@
-from audioop import reverse
+from django.urls import reverse
 from re import template
 from django.urls import re_path as url , include , path
 from . import views
@@ -26,7 +26,9 @@ urlpatterns = [
     url(r'^new/project$', views.new_project, name='new-project'),
     url(r'^accounts/profile/$', views.user_profiles, name='profile'),
     url(r'^ratings/', include('star_ratings.urls', namespace='ratings')),
-    url(r'^comment/(\d+)', views.comment,name='comments'),
+    url(r'^comment/(\d+)', views.comment, name='comments'),
+    url(r'^api/projects/$', views.ProjectList.as_view()),
+    url(r'^api/profiles/$', views.ProfileList.as_view()),
 
      
 

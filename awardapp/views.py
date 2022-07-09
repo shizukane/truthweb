@@ -178,15 +178,32 @@ def password_reset_request(request):
     return render(request=request, template_name="django_registration/reset.html",
                   context={"password_reset_form": password_reset_form})
 def comment(request, id):
-    form = CommentForm
-    pk = id
-    
-    return render(request, "comments.html", {"form":form})
-class AddCommentView(APIView):
-    model = Comment
     form_class = CommentForm
-    fields = ('name','body')
-    template_name = 'add_comment.html'
+    form = form_class(request.POST)
+    if request.method == 'POST':
+      if form.is_valid():
+            form.save()
+    else:
+        form = CommentForm()
+    try:
+        comments = Comment.objects.get(pk = id)
+        
+    except ObjectDoesNotExist:
+        raise Http404()
+      
+    return render(request, "comments.html", {"form":form, 'comments':comments},{"next_page": '/'})
+class ProjectList(APIView):
+    def get(self, request, format=None):
+        all_project = Projects.objects.all()
+        serializers = ProjectSerializer(all_project, many=True)
+        return Response(serializers.data)
+    
+    
+class ProfileList(APIView):
+    def get(self, request, format=None):
+        all_profile = Profile.objects.all()
+        serializers = ProfileSerializer(all_profile, many=True)
+        return Response(serializers.data)
 
 
     
