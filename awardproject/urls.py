@@ -28,4 +28,5 @@ urlpatterns = [
     url(r'^accounts/login/$', views.LoginView.as_view(template_name="django_registration/login.html"), {"next_page": '/'}), 
     url(r'^accounts/logout/$', views.LogoutView.as_view(template_name="django_registration/logout.html"),{"next_page": '/'}, name='logout'), 
     url(r'^tinymce/', include('tinymce.urls')),
+    
 ]

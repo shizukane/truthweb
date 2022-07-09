@@ -1,5 +1,7 @@
 
 from dataclasses import fields
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
 from re import template
 from unicodedata import category
 from xml.etree.ElementTree import Comment
@@ -177,21 +179,7 @@ def password_reset_request(request):
     password_reset_form = PasswordResetForm()
     return render(request=request, template_name="django_registration/reset.html",
                   context={"password_reset_form": password_reset_form})
-def comment(request, id):
-    form_class = CommentForm
-    form = form_class(request.POST)
-    if request.method == 'POST':
-      if form.is_valid():
-            form.save()
-    else:
-        form = CommentForm()
-    try:
-        comments = Comment.objects.get(pk = id)
-        
-    except ObjectDoesNotExist:
-        raise Http404()
-      
-    return render(request, "comments.html", {"form":form, 'comments':comments},{"next_page": '/'})
+
 class ProjectList(APIView):
     def get(self, request, format=None):
         all_project = Projects.objects.all()
@@ -205,5 +193,12 @@ class ProfileList(APIView):
         serializers = ProfileSerializer(all_profile, many=True)
         return Response(serializers.data)
 
+class AddComment(CreateView):
+    model = Comment
+    form_class = CommentForm
+    template_name = 'comments.html'
+    success_url = reverse_lazy('sites')  
 
-    
+    def form_valid(self,form):
+        form.instance.project_id = self.kwargs['pk']
+        return super().form_valid(form)

@@ -1,11 +1,16 @@
+{%extends 'django_registration/layout.html'%}
+
+
 {% load bootstrap4 %}
 {% load static %}  
 {% block content %} 
-<div class="col-lg-6 pt-2 ">
-    <form  action=" " method="post" enctype="multipart/form-data">
+<div style="margin-left:30%; margin-top:4%" class="col-lg-6 pt-2 ">
+
+    <form  action="" method="post" enctype="multipart/form-data">
       {%csrf_token%}
       {% bootstrap_form form%}
-      <input type="submit" class="btn btn-warning btn-lg font-weight-bold" value="SUBMIT">
+      <input type="submit" class="btn btn-warning btn-lg font-weight-bold" value="Post">
     </form>
   </div>
+
   {% endblock %}

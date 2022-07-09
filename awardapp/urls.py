@@ -3,6 +3,7 @@ from re import template
 from django.urls import re_path as url , include , path
 from . import views
 from .forms import CommentForm
+from django.views.generic import CreateView
 from django.conf import settings
 from django.contrib.auth import views as auth_views
 from django.conf.urls.static import static
@@ -26,14 +27,9 @@ urlpatterns = [
     url(r'^new/project$', views.new_project, name='new-project'),
     url(r'^accounts/profile/$', views.user_profiles, name='profile'),
     url(r'^ratings/', include('star_ratings.urls', namespace='ratings')),
-    url(r'^comment/(\d+)', views.comment, name='comments'),
     url(r'^api/projects/$', views.ProjectList.as_view()),
+    url(r'^(?P<pk>\d+)/comment/$', views.AddComment.as_view(form_class=CommentForm,template_name="comments.html" ),{"next_page": '/project/'},name='comments'),
     url(r'^api/profiles/$', views.ProfileList.as_view()),
-
-     
-
-     
-
 
 ]
 

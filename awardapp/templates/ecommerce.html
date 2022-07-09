@@ -39,7 +39,7 @@
               <!-- Card image -->
               <div class="view overlay zoom">
                 {% if project_item.project_image %}
-                <a href="/project/{{project_item.id}}">
+                <a href="{% url 'project_results' project_item.id %}">
                   <img class="card-img-top" src="{{project_item.project_image.url}}" alt="{{ project_item.project_name }}" height="300px">
                 </a>
                 {% else %}
