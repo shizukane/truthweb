@@ -9,6 +9,7 @@ from django.contrib.auth import views as auth_views
 from django.conf.urls.static import static
 
 
+
 urlpatterns = [
     url(r'^$', views.index, name= 'index'),
     url(r'^sites/$', views.sites, name= 'sites'),
@@ -30,6 +31,7 @@ urlpatterns = [
     url(r'^api/projects/$', views.ProjectList.as_view()),
     url(r'^(?P<pk>\d+)/comment/$', views.AddComment.as_view(form_class=CommentForm,template_name="comments.html" ),{"next_page": '/project/'},name='comments'),
     url(r'^api/profiles/$', views.ProfileList.as_view()),
+
 
 ]
 

@@ -2,7 +2,7 @@
 
 
 {% block content %}
-<body style="background: linear-gradient(black,rgb(18, 18, 49));">
+<body style="background: linear-gradient(black,rgb(18, 18, 49)); height:auto;">
     
 <div  class="col" style="margin-left: 30%; font-family: Roboto;">
     <small style="  background: linear-gradient(335deg, #fc00ff , #00dbde);
@@ -11,7 +11,7 @@
     font-size: 2em;
     display: inline-block;
     margin: 1em 0em 0 1em;
-    font-family: Roboto;"><b>Uploading my site</b></small>
+    font-family: Roboto;"><h1>Uploading my site</h1></small>
     <h5 style="  font-weight: 300;
     font-family: Roboto;
     color: #eee;
@@ -23,7 +23,7 @@
     <p style="color: white;">*To upload your site you need to first create an account.<br>
       *Afterwards you can navigate to home and upload your program via the submit site button.<br>
       *In the project submit form there are required fields to be filled, Project/Site category being one of them.<br>
-      In this field you need to input the category your project falls under in context to the choices<br> available in the  <a class="expl"href="{%url 'choices'%}" >Explore Awesome Websites</a>  section.  (ecommerce site,personal site,portfolio site,magazine site<br>,blog site,business site,entertainment site.).
+      In this field you need to input the category your project falls under in context to the choices<br> available in the  <a class="expl"href="{%url 'choices'%}" >Explore Awesome Websites</a>  section.  (ecommerce,personal,portfolio,magazine<br>,blog,business,entertainment.).
 
     </p>
   </div>
@@ -35,7 +35,7 @@
     font-size: 2em;
     display: inline-block;
     margin: 1em 0em 0 1em;
-    font-family: Roboto;"><b>Giving Ratings</b></small>
+    font-family: Roboto;"><h1>Giving Ratings</h1></small>
     <h5 style="  font-weight: 300;
     font-family: Roboto;
     color: #eee;
@@ -47,5 +47,63 @@
     <p style="color: white;">*To give ratings to a website after review you are required to create an account<br>
     *Depending on your perception of the project you give an award on a scale of one to ten stars,<br> ten being excellent and one being unsatisfactory</p>
   </div>
+  <div  class="col2" style="margin-left: 30%; font-family: Roboto;">
+    <small style="  background: linear-gradient(335deg, #fc00ff , #00dbde);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2em;
+    display: inline-block;
+    margin: 1em 0em 0 1em;
+    font-family: Roboto;"><h1>Updating My Profile</h1></small>
+    <h5 style="  font-weight: 300;
+    font-family: Roboto;
+    color: #eee;
+    margin-left: 2.17em;
+    max-width: 400px;
+    background: linear-gradient(335deg, #E0EAFC , #CFDEF3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;"></h5>
+    <p style="color: white;">*To update your profile you can either navigate to the profile settings using the profile button on the navbar dropdown<br>
+    Or the profile button on the sidebar</p>
+  </div>
   </body>
+  <div  class="col2" style="margin-left: 30%; font-family: Roboto;">
+    <small style="  background: linear-gradient(335deg, #fc00ff , #00dbde);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2em;
+    display: inline-block;
+    margin: 1em 0em 0 1em;
+    font-family: Roboto;"><h1>Password Change</h1></small>
+    <h5 style="  font-weight: 300;
+    font-family: Roboto;
+    color: #eee;
+    margin-left: 2.17em;
+    max-width: 400px;
+    background: linear-gradient(335deg, #E0EAFC , #CFDEF3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;"></h5>
+    <p style="color: white;">*To reset your password you need to use the <a href="password_reset/">link</a> in the login page where<br> you will be directed appropriately on how to change your password.
+    </p>
+  </div>
+  <div  class="col2" style="margin-left: 30%; font-family: Roboto;">
+    <small style="  background: linear-gradient(335deg, #fc00ff , #00dbde);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2em;
+    display: inline-block;
+    margin: 1em 0em 0 1em;
+    font-family: Roboto;"><h1>Web Search</h1></small>
+    <h5 style="  font-weight: 300;
+    font-family: Roboto;
+    color: #eee;
+    margin-left: 2.17em;
+    max-width: 400px;
+    background: linear-gradient(335deg, #E0EAFC , #CFDEF3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;"></h5>
+    <p style="color: white;">*To search for posted wesites you need to have an account<br>
+
+    *After creating an account a search bar will appear at the navbar, which you'll use to look up existing projects.</p>
+  </div>
   {% endblock %}

@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'awardproject.wsgi.application'
 DATABASES = {
        'default': {
            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': 'truth24',
+           'NAME': 'truth26',
            'USER': 'postgres',
            'PASSWORD': '1234',
            'PORT': '',
@@ -150,4 +150,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_REDIRECT_URL = 'index'
 STAR_RATINGS_RANGE = 10
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT=  ''
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'drizydarolle@gmail.com'
+EMAIL_HOST_PASSWORD = ''

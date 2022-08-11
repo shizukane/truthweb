@@ -1,4 +1,4 @@
-{%extends 'django_registration/layout.html'%}
+{% load bootstrap4 %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,14 +10,15 @@
 </head>
 {% block content %}
 {% load crispy_forms_tags %}
-<body>
-<form  action="{% url 'password_reset_confirm'%}" method="post">
+<body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzksQPbySqAzmm8HTDQvuF66ZMq4vInpz6Q2ncP1PgiSU15S2YQEr63mF8AGhR6D5rx5w&usqp=CAU');color:wheat;">
+<form style="margin-left:40%;margin-top:20%;" action="accounts/reset" method="post">
 {% csrf_token %} 
-{{ password_reset_form|crispy }}
-<button type="submit">submit</button>
+{% bootstrap_form form%}
+<br>    
+<input type="submit" class="btn btn-warning btn-lg font-weight-bold" value="Submit">
 
     </form>
 {% endblock %}
-
+    
 </body>
 </html>
