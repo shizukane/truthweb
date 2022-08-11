@@ -1,5 +1,6 @@
 
 from dataclasses import fields
+from multiprocessing import context
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from re import template
@@ -21,7 +22,7 @@ from django.contrib.auth.tokens import default_token_generator
 from .models import Profile,Projects,Comment
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
-from .forms import ProfileUpdateForm,RegisterForm,NewProjectForm,CommentForm
+from .forms import ProfileUpdateForm,RegisterForm,NewProjectForm,CommentForm,UserUpdateForm
 from django.contrib import messages
 from rest_framework.response import Response
 from django.core.mail import BadHeaderError, send_mail
@@ -138,18 +139,26 @@ def user_profiles(request):
     projects = Projects.get_by_author(Author)
     
     if request.method == 'POST':
-        form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user)
+        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+        u_form = UserUpdateForm(request.POST, request.FILES, instance=request.user)
      
 
-        if form.is_valid():
-            profile = form.save(commit=False)
-            profile.save()
+        if u_form.is_valid() and p_form.is_valid():
+          u_form.save()
+          p_form.save()
+
         return redirect('profile')
         
     else:
-        form = ProfileUpdateForm()
-    
-    return render(request, 'django_registration/profile.html', {"form":form, "projects":projects})
+        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+        u_form = UserUpdateForm(request.POST, request.FILES, instance=request.user)
+
+    context = {
+   "p_form":p_form,
+   "u_form":u_form,
+    "projects":projects
+    }    
+    return render(request, 'django_registration/profile.html',context)
 def password_reset_request(request):
     if request.method == "POST":
         domain = request.headers['Host']

@@ -37,8 +37,8 @@
     </div>
 
     <p class="w3-text-white w3-center">{{user.username}}</p>
-    {% if user.bio %}
-            <p>{{  user.bio}}</p>
+    {% if user.profile.bio %}
+            <p>{{  user.profile.bio}}</p>
             {%else%}
             <P style="color: wheat;">No user bio for {{user.username}}</P>
             {% endif %}
@@ -67,9 +67,9 @@
         <img src="https://www.yourfirstpatient.com/assets/default-user-avatar-thumbnail-117c4e02d0bee9a424842ebb2a903cf71468999f79ce30bad99c07f100764064.png" style="width:45%;" class="w3-circle w3-center">
           {% endif %}
           <br> <br>
-        <h4 style="color: wheat;"> <span class="font-weight-bold"> Names:</span>  {{user.first_name}} {{user.last_name|upper}} </h4>
+        <h4 style="color: wheat;"> <span class="font-weight-bold"> Name:</span>  {{user.username}}</h4>
         <p style="color: wheat;">  <span class="font-weight-bold"> Email:</span>  {{user.email}} </p>
-        <p style="color: wheat;"> <span class="font-weight-bold"> Bio:</span> {{ user.bio}}  </p>
+        <p style="color: wheat;"> <span class="font-weight-bold"> Bio:</span> {{ user.profile.bio}}  </p>
         <button class="btn btn-md btn-outline-info font-weight-bold" data-toggle="modal" data-target="#profile"> Edit Profile</button>
       </div>
       <hr>
@@ -105,7 +105,9 @@
           <hr class="">
           <form  method="post" enctype="multipart/form-data">
           {% csrf_token %}
-          {% bootstrap_form form%}
+          {% bootstrap_form p_form%}
+          {% bootstrap_form u_form%}
+
           <div class="form-group">
           <button type="submit" class="btn blue-gradient btn-lg mt-2 font-weight-bold btn-block"> Update </button>
           </div>

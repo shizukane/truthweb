@@ -31,7 +31,7 @@ urlpatterns = [
     url(r'^tinymce/', include('tinymce.urls')),
     url("password_reset/", views.PasswordResetView.as_view(template_name= 'django_registration/reset.html'),name="password_reset"),
     url("password_done/",views.PasswordResetDoneView.as_view(template_name= 'django_registration/password_reset_done.html'),name="password_reset_done",),
-    url("reset/<uidb64>/<token>/",views.PasswordResetConfirmView.as_view(),name="password_reset_confirm",),
+    url(r'^reset/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$',views.PasswordResetConfirmView.as_view(template_name = 'django_registration/password_reset_confirm.html'),name="password_reset_confirm",),
     url("reset_done/",views.PasswordResetCompleteView.as_view(),name="password_reset_complete",),
 
     

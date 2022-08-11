@@ -10,12 +10,20 @@
 </head>
 {% block content %}
 {% load crispy_forms_tags %}
-<body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzksQPbySqAzmm8HTDQvuF66ZMq4vInpz6Q2ncP1PgiSU15S2YQEr63mF8AGhR6D5rx5w&usqp=CAU');color:wheat;">
-<form style="margin-left:40%;margin-top:20%;" action="accounts/reset" method="post">
+<body style="font-family: Roboto;   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzksQPbySqAzmm8HTDQvuF66ZMq4vInpz6Q2ncP1PgiSU15S2YQEr63mF8AGhR6D5rx5w&usqp=CAU');color:wheat;">
+    <h1 style="background: linear-gradient(335deg,orange, #5b3012);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2em;
+    margin-left:20%;
+    margin-top:5%;
+
+    display: inline-block;
+    font-family: Roboto;">Enter your Email in which the Password reset link will be sent</h1>
+<form style="margin-left:40%;margin-top:10%; font-size:50px;" method="post">
 {% csrf_token %} 
-{% bootstrap_form form%}
-<br>    
-<input type="submit" class="btn btn-warning btn-lg font-weight-bold" value="Submit">
+      {{ form }}<br>    
+<input type="submit" style="border-radius:50%;padding:20px;background-color:orange" class="btn btn-warning btn-lg font-weight-bold" value="Send">
 
     </form>
 {% endblock %}

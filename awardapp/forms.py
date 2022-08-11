@@ -17,6 +17,11 @@ class NewProjectForm(forms.ModelForm):
           'project_description': forms.Textarea(attrs={'rows':4, 'cols':10,}),
         }
         
+class UserUpdateForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('username','email')
+
 
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
