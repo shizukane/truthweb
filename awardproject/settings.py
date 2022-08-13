@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import django_heroku
 import dj_database_url
 from decouple import config, Csv
 
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'star_ratings',
     'django_countries',
+    'django_heroku',
     'awardapp',
 ]
 
@@ -156,3 +158,5 @@ EMAIL_PORT=  ''
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'drizydarolle@gmail.com'
 EMAIL_HOST_PASSWORD = ''
+
+django_heroku.settings(locals())
