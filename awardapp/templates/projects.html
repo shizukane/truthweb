@@ -3,7 +3,7 @@
 {% load bootstrap4%}
 {% load ratings %}
 
-{% block content %}
+  {% block content %}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,7 +23,7 @@
 </head>
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-black w3-animate-left " style="z-index:3;width:250px; " id="mySidebar"><br>
+<nav class="w3-sidebar w3-collapse w3-black w3-animate-left " style="z-index:3;width:250px; margin-top:-1%; " id="mySidebar"><br>
   <div class="w3-container">
     <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
       <i class="fa fa-remove"></i>
@@ -56,13 +56,15 @@
     <a style="color: wheat;"href="{%url 'new-project'%}" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>Submit Project</a>
     {% if user.is_authenticated %}
     <a style="color: wheat;"href="{%url 'logout'%}" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-sign-out fa-fw w3-margin-right"></i>Logout</a>
+
     {% endif %}
+    <p style="margin-top:230%;color: wheat;">&copy;2022 Darolle Shizukane | All Rights Reserved</p>
 
   </div>
 
 </nav>
 
-<div class="container">
+<div style="margin-top: -1%;" class="container">
 <div class="col-lg-5"></div>
   <div class="row mt-4"></div>
   <!-- Grid row -->
@@ -147,7 +149,7 @@
     <strong style="color: wheat;"> {{comment.name}}
       {{comment.date_added}}</strong>
    
-    <p style="color:white">{{comment.body}}</p>
+    <p style="color:white">{{comment.Say_Something}}</p>
 
     {% endfor %}
 {% endif %}

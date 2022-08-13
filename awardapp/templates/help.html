@@ -2,7 +2,7 @@
 
 
 {% block content %}
-<body style="background: linear-gradient(black,rgb(18, 18, 49)); height:auto;">
+<body style="overflow-x:hidden;height:100vh;">
     
 <div  class="col" style="margin-left: 30%; font-family: Roboto;">
     <small style="  background: linear-gradient(335deg, #fc00ff , #00dbde);
@@ -22,8 +22,9 @@
     -webkit-text-fill-color: transparent;"></h5>
     <p style="color: white;">*To upload your site you need to first create an account.<br>
       *Afterwards you can navigate to home and upload your program via the submit site button.<br>
-      *In the project submit form there are required fields to be filled, Project/Site category being one of them.<br>
-      In this field you need to input the category your project falls under in context to the choices<br> available in the  <a class="expl"href="{%url 'choices'%}" >Explore Awesome Websites</a>  section.  (ecommerce,personal,portfolio,magazine<br>,blog,business,entertainment.).
+      *In the project submit form there are required fields to be filled, Project category being one of them.<br>
+      In this field you need to input the category your project falls under in context to the choices<br> available in the  <a class="expl"href="{%url 'choices'%}" >Explore Awesome Websites</a>  section.  (ecommerce,personal,portfolio,magazine<br>,blog,business,entertainment.).<br>
+      *In the project title you are required to fill your project's name,afterwhich you will be required to upload an image<br> of your site's landingpage,then alittle about your project in the project description and finally paste the link to the<br> live site or github repo in the link section.
 
     </p>
   </div>
@@ -45,7 +46,11 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;"></h5>
     <p style="color: white;">*To give ratings to a website after review you are required to create an account<br>
-    *Depending on your perception of the project you give an award on a scale of one to ten stars,<br> ten being excellent and one being unsatisfactory</p>
+    *Depending on your perception of the project you give an award on a scale of one to ten stars,<br> ten being excellent and one being unsatisfactory.<br>
+    *Rating in terms of Usability means you award in context to how easy the interaction with the program or website was.<br>
+    *Rating in terms of Design means you award in context to the outlook of the website.<br>
+    *Rating in terms of Content means you award in context to useful the website's content is in terms of problem solving.
+  </p>
   </div>
   <div  class="col2" style="margin-left: 30%; font-family: Roboto;">
     <small style="  background: linear-gradient(335deg, #fc00ff , #00dbde);

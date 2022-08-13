@@ -47,10 +47,10 @@ class RegisterForm(RegistrationForm):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ('name','body')
+        fields = ('name','Say_Something')
     widgets = {
         'Name': forms.TextInput(attrs={'class':'form-control'}),
-        'Body': forms.Textarea(attrs={'class':'form-control'})
+        'Say Something': forms.Textarea(attrs={'class':'form-control'})
 
     }    
 
