@@ -295,8 +295,8 @@ h1 {
 .footer {
   position: relative;
   width: 100%;
-  margin-top: 15%;
-  background: #3586ff;
+  margin-top: 20%;
+  background: #ff3575;
   min-height: 80px;
   display: flex;
   justify-content: center;
@@ -390,6 +390,56 @@ h1 {
   100% {
     background-positon-x: 0px;
   }
+}
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.content{
+  margin-top: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.content1{
+  margin-right: 70%;     
+  margin-bottom: 50%;
+  margin-top: -8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.content2{
+  margin-left: 72%;
+  display: flex;
+  margin-top: -59%;
+
+
+}
+.box{
+  display: flex;
+  background: #3586ff;
+
+  align-items: center;
+  justify-content: space-evenly;
+  width: 350px; height: 120px;
+  font-size: 25px;
+  border-radius: 15px;
+  background-color:#3586ff;
+  box-shadow: 0 0 10px 10px rgba(0,0,0,0.2);
+}
+.media{
+  width: 40px; height: 40px;
+  display: flex; justify-content: center; align-items: center;
+  border-radius: 50%;
+  box-shadow: 0 0 8px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.2s linear;
+  background-color: black;
+  color: #950101;
+}
+.media:hover{
+  transform: scale(1.5) translateY(-15px);
 }
 
 
