@@ -1,5 +1,4 @@
 from django.urls import reverse
-from re import template
 from django.urls import re_path as url , include , path
 from . import views
 from .forms import CommentForm
