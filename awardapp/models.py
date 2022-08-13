@@ -1,6 +1,3 @@
-from tkinter import CASCADE
-from typing import cast
-from unicodedata import category
 from django.db import models
 from django.contrib.auth.models import User
 from django_countries.fields import CountryField

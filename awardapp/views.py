@@ -1,17 +1,10 @@
 
-from dataclasses import fields
-from multiprocessing import context
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
-from re import template
-from unicodedata import category
-from xml.etree.ElementTree import Comment
 from django.conf import settings
-from django.templatetags.static import static
 from django.shortcuts import render,redirect
 from django.http import HttpResponse, Http404
 import datetime as dt
-from django.shortcuts import get_object_or_404
 
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes
