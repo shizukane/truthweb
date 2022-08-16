@@ -94,6 +94,7 @@ DATABASES = {
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 db_from_env = dj_database_url.config(conn_max_age=500)
+# we only need the engine name, as heroku takes care of the rest
 DATABASES['default'].update(db_from_env)
 
 ALLOWED_HOSTS = ['*']
