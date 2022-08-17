@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'star_ratings',
     'django_countries',
     'django_heroku',
+    'truthweb',
     'awardapp',
 ]
 
