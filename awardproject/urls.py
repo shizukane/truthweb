@@ -30,7 +30,7 @@ urlpatterns = [
     url("password_reset/", views.PasswordResetView.as_view(template_name= 'django_registration/reset.html'),name="password_reset"),
     url("password_done/",views.PasswordResetDoneView.as_view(template_name= 'django_registration/password_reset_done.html'),name="password_reset_done",),
     url(r'^reset/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$',views.PasswordResetConfirmView.as_view(template_name = 'django_registration/password_reset_confirm.html'),{"next_page": 'reset_done/'},name="password_reset_confirm"),
-    url("reset_done/",views.PasswordResetCompleteView.as_view(template_name = 'django_registration/password_reset_confirm'),name="password_reset_complete"),
+    url("reset_done/",views.PasswordResetCompleteView.as_view(template_name = 'django_registration/password_reset_complete.html'),name="password_reset_complete"),
 
     
 ]
